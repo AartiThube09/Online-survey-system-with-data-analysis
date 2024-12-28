@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Dataset Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* Styles for the navigation bar */
+        body {
+            display: flex; /* Use flexbox to layout the sidebar and content */
+        }
+
+        .sidebar {
+            min-width: 200px; /* Fixed width for the sidebar */
+            background-color: #dfe4ea; /* Light background color */
+            padding: 20px; /* Padding for the sidebar */
+            border-right: 1px solid #dee2e6; /* Right border for separation */
+        }
+
+        .content {
+            flex: 1; /* Take up the remaining space */
+            padding: 20px;
+            padding-right: 200px; /* Padding for the main content */
+        }
+
+        /* Styles for the image container */
+        .image-container {
+            display: none; /* Hidden by default */
+            margin-top: 10px;
+            
+        }
+
+        .image-container img {
+            width: 100%; /* Responsive images */
+            max-width: 400px; /* Optional max width */
+            margin-bottom: 10px; /* Space between images */
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Iris Dataset Dashboard</h2>
+        <button id="overviewButton" class="btn btn-secondary btn-block mb-2">Overview</button>
+        <button id="toggleButton" class="btn btn-primary btn-block">Visualizations</button>
+    </div>
+
+    <div class="content">
+        <div id="overviewContent">
+            <h3>Overview</h3>
+            <p>This webpage showcases two data analysis projects: the Iris dataset analysis, which explores 
+                relationships among flower species based on physical characteristics, and the Amazon dataset 
+                web scraping project, which extracts product details to visualize customer preferences. 
+                Together, they highlight the power of data extraction and visualization in understanding 
+                trends in both botany and e-commerce.</p>
+        </div>
+
+        <!-- Container for images -->
+        <div class="image-container" id="visualizations">
+            <p><strong style="font-size: larger;">visualizations of iris dataset</strong></p>
+
+            <p>BAR GRAPH:</p>
+            <img src="bar_graph.png" alt="Bar Graph"><br>
+            <P>HISTOGRAM:</P>
+            <img src="histogram.png" alt="Histogram"><br>
+            <P>LINE GRAPH:</P>
+            <img src="line_graph.png" alt="Line Graph"><br>
+            <P>POINT GRAPH:</P>
+            <img src="point_graph.png" alt="Point Graph"> <br>
+            <P>SCATTER PLOT:</P>
+            <img src="scatter_plot.png" alt="Scatter Plot">
+            <br> <br> 
+            <p><strong style="font-size: larger;">visualizations of amazon dataset</strong></p>
+            <P>HISTOGRAM:</P> <br>
+            <img src="product_price.png" alt="histogram"> <br> <br>
+            <P>BAR GRAPH:</P> <br>
+            <img src="reviews.png" alt="bar graph"> <br> <br>
+            <P>LINE GRAPH:</P> <br>
+            <img src="pie_chart.png" alt="pie chart">
+        </div>
+    </div>
+
+    Include jQuery and Bootstrap JS
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Toggle the visibility of visualizations
+        $('#toggleButton').click(function() {
+            $('#visualizations').toggle(); // Toggle the visibility of the image container
+        });
+
+        // Show the overview content when the overview button is clicked
+        $('#overviewButton').click(function() {
+            $('#visualizations').hide(); // Hide the visualizations if they're visible
+            $('#overviewContent').show(); // Show the overview content
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard Visualizations</h1>
+    <ul>
+        <li><a href="{{ url_for('bar_graph') }}">Bar Graph</a></li>
+        <li><a href="{{ url_for('histogram') }}">Histogram</a></li>
+        <li><a href="{{ url_for('point_graph') }}">Point Graph</a></li>
+        <li><a href="{{ url_for('line_graph') }}">Line Graph</a></li>
+        <li><a href="{{ url_for('scatter_plot') }}">Scatter Plot</a></li>
+    </ul>
+</body>
+</html>
